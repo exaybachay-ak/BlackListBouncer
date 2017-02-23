@@ -1,10 +1,10 @@
 # BlackListBouncer
-Block known bad networks and hosts (bulletproof providers and known malware/bots) from cracking your passwords/accessing your system remotely, or from successfully exploiting holes in your software.  If your system does become compromised, this should then be limit the damage by preventing communications back to C2 domains/hosts.
+Block known bad networks and hosts (bulletproof providers and known malware/bots) from cracking your passwords/accessing your system remotely, or from successfully exploiting holes in your software.  If your system does become compromised, this should then be limit the damage by preventing communications back to C2 domains/hosts. Finally, if/when your system makes a request to the newly installed blackhole, this script will notify you via either a popup-window prompt, or via email if you select that configuration option when you run the script.
 
 # Goals:
-*(Inward goal)*  Prevent undesirable traffic from reaching your computer from the Internet, if the script detects your system being accessible from the Internet (potentially just run traceroute and look for presence of private ip addresses on the first hop).
+*(Inbound goal)*  Prevent undesirable traffic from reaching your computer from the Internet, if the script detects your system being accessible from the Internet (potentially just run traceroute and look for presence of private ip addresses on the first hop).
 
-*(Outward goal)* Prevent your system from communicating with known bad hosts, such as Tor nodes, bulletproof hosting providers (like OVH), bots, and any other threat feeds of attackers like Greensnow.co, Cymon, OTX, etc..
+*(Outbound goal)* Prevent your system from communicating with known bad hosts, such as Tor nodes, bulletproof hosting providers (like OVH), bots, and any other threat feeds of attackers like Greensnow.co, Cymon, OTX, etc.. If suspect communication is detected and blocked, report to user for remedial action, and display calling process to assist with incident response.
 
 The main goal is to be able to prevent systems you own and/or administer from either being attacked successfully with brute force cracking attacks or exploits, and/or to prevent communication back to hosts that are known as being attached to malicious activity or code.  This is not, of course, meant to be the end-all be-all solution to keep your system from getting infected or owned.  It is, instead, meant to be a tool that integrates into an overall defense-in-depth strategy.
 
