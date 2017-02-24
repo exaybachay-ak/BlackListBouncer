@@ -13,6 +13,10 @@ Primarily the idea came up because of other software I'm working on that will at
 # Functionality 
 Functionality should be simple.  Run this script.  If something goes wrong, turn it off.  If you know what you are doing, add IP addresses to an exclusions list once you've vetted them and know they are not a threat.  My idea is for this to be dead-simple, and an effective mitigation against NON-TARGETED and semi-targeted threats.  This should be an effective means of blocking incoming brute-force password cracking from botnets and malware that is tossing exploits around, as well as preventing your system from going out and connecting to Command and Control systems or other known malicious systems/networks. 
 
+# *Plan for v2*
+Integrate event log monitoring to detect intrusions that get past the HIPS/blocking side of things using "Spotting the Adversary" and other event log intelligence methods.
+http://www.redblue.team/2015/09/spotting-adversary-with-windows-event.html
+
 # Full Disclosure / Props:
 The idea came to me naturally, but it incorporates this awesome utility I found a while ago, as well as this awesome OSINT collection:
 https://github.com/BinaryDefense/goatrider/blob/master/goatrider.py
