@@ -19,4 +19,9 @@
       https://intel.criticalstack.com/user/sign_up
       https://github.com/BinaryDefense/goatrider/blob/master/goatrider.py
       *more to be added later*
+
+      #Known hosting platform IP blocks
+      http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html
+      http://www.senderbase.org/lookup/org/?search_string=OVH%20SAS
+      
 #>
