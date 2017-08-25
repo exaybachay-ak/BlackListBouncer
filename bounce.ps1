@@ -1,6 +1,6 @@
 <#    #Powershell blackhole script
           Just run this script and it will re-route potentially malicious traffic to null
-          In order to verify this, try run a to traceroute to 64.182.208.181 (<-- update this address later)
+          In order to verify this, try run a to traceroute to 210.204.167.121
             Your traceroute should route to null because this software has configured a rule to force specific outbound
             traffic to the localhost bitbucket
           If you want to un-do the changes, select the reverse changes option and it will roll things back.  If something
@@ -10,9 +10,6 @@
       #NOTE: At least half of the credit should go to Dave Kennedy and @BinaryDefense for making GoatRider.  
              Although the main component is the idea of re-routing to null, and the ease of use, GoatRider was what brought it all together
   
-      #Program flow:
-      To bounce malicious inbound/outbound traffic:  Run bounce.ps1
-      To undo change made previously by this script: Run bounce.ps1 -undo
 
       #Primary powershell command
       New-NetRoute -DestinationPrefix "152.195.54.20/32" -InterfaceIndex 1 -NextHop 127.0.0.1
