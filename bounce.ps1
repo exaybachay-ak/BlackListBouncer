@@ -33,7 +33,7 @@
 #>
 
 #Set error action to silent, to suppress info
-$ErrorAction = SilentlyContinue
+$ErrorActionPreference = "SilentlyContinue"
 
 #Retreive blacklist hosts from various sources
 $greensnow = (invoke-webrequest -URI "blocklist.greensnow.co/greensnow.txt" -UseBasicParsing -TimeoutSec 60)
@@ -67,7 +67,8 @@ function Unblock-Hosts
 function blockOneHost
 {
   $hosttemp = Read-host -prompt 'Host to block:'
-  New-NetRoute -DestinationPefix $hosttemp/32 -InterfaceIndex 1 -NextHop 0.0.0.0
+  New-NetRoute -DestinationPefix "$hosttemp/32" -InterfaceIndex 1 -NextHop 0.0.0.0
+  pause
 }
 
 function displayRoutes
@@ -106,8 +107,6 @@ function displayMenu
   }
 
   if($userresponse -eq "4"){
-    #Credit for the cool read input into array trick:
-    #https://copysave.wordpress.com/2010/07/02/read-host-values-into-an-array/
     $hosts = (Read-host -Prompt 'Enter a list of hosts:').split(',') | ForEach-Object {$_.trim()}
     $hosts | %{
       New-NetRoute -DestinationPrefix $_/32 -InterfaceIndex 1 -NextHop 0.0.0.0
